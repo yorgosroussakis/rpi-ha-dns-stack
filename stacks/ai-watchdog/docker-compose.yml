@@ -1,0 +1,1 @@
+version: '3.8'\n\nservices:\n  ai-watchdog:\n    image: ai-watchdog:latest\n    environment:\n      - WATCHDOG_INTERVAL=30s\n      - NOTIFICATION_CHANNEL=email\n      - EMAIL_RECIPIENT=your-email@example.com\n    restart: always\n    volumes:\n      - /var/log/watched:/var/log/watched\n\nnetworks:\n  default:\n    driver: bridge\n
